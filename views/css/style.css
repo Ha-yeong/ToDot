@@ -1,0 +1,8 @@
+body {
+    background: #558C89;
+    color: #aaaaaa;
+}
+
+#login-form > div {
+  margin: 15px 0;
+}
