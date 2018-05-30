@@ -8,10 +8,11 @@
   <body>
     <h1>Community</h1>
     <ul>
+      <% for (var i = 0; i < posts.length; i++) { %>
       <li>
-        <p>글1</p>
-        <p>글2</p>
+        <a href=<%= '/community/'+posts[i].postId %>><%= posts[i].title %></a>
       </li>
+      <% } %>
     </ul>
   </body>
 </html>

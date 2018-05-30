@@ -6,13 +6,13 @@
     <meta charset="utf-8" />
   </head>
   <body>
-    <h1>New Post</h1>
-    <form action="/newpost" method="post">
+    <h1>Edit Post</h1>
+    <form action=<%= "/post/"+post.postId+"/edit" %> method="post">
       <p>
-        <input type="text" name="title" placeholder="title">
+        <input type="text" name="title" value=<%= post.title %> placeholder="title">
       </p>
       <p>
-        <input type="text" name="content" placeholder="content">
+        <input type="text" name="content" value=<%= post.content %> placeholder="content">
       </p>
       <p>
         <input type="checkbox" name="share">공유
@@ -20,7 +20,7 @@
       <p>
         <input type="submit">
       </p>
-      <a href="/welcome">뒤로가기</a>
+      <a href=<%= "/post/"+post.postId %>>뒤로가기</a>
     </form>
   </body>
 </html>
