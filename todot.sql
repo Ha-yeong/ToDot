@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- 생성 시간: 18-05-28 07:19
+-- 생성 시간: 18-05-30 20:48
 -- 서버 버전: 5.7.22
 -- PHP 버전: 7.1.17
 
@@ -47,15 +47,24 @@ INSERT INTO `posts` (`postId`, `authorId`, `date`, `title`, `share`, `content`) 
 (3, NULL, NULL, '하하', 0, '하하하하하ㅏ'),
 (4, NULL, NULL, 'sdjfiosdj', 0, 'sdojfsaoidj'),
 (5, NULL, NULL, 'sdfsd', 0, 'dsf'),
-(6, 3, NULL, 'sdkjfsih', 0, 'isdjfois'),
-(7, 3, '2018-05-28 14:05:20', 'wlsdyddl', 0, 'qkqh'),
 (8, 7, '2018-05-28 14:05:23', 'tlagkdud', 0, '천재'),
 (9, 7, '2018-05-28 14:05:00', 'ㄴㅇㄹ', 0, 'ㄴㅇㄹ'),
 (10, 7, 'May 28, 2018 2:12 PM', '바바바바바', 0, '유바바바'),
 (11, 7, '2018-05-28T14:13:52+09:00', 'sdfdf', 0, 'sdf'),
 (12, 8, '2018-05-28T15:02:59+09:00', 'I\'m', 0, 'lion'),
 (13, 10, '2018-05-28T16:06:05+09:00', '안녕', 0, '하영이조아'),
-(14, 5, '2018-05-28T22:47:08+09:00', '언니', 0, '안녕');
+(14, 5, '2018-05-28T22:47:08+09:00', '언니', 0, '안녕'),
+(15, 11, '2018-05-29T12:56:19+09:00', '하하', 0, '하하하'),
+(16, 11, '2018-05-29T13:06:24+09:00', 'life', 0, 'light'),
+(17, 11, '2018-05-29T13:06:44+09:00', 'lifeeee', 0, 'lighttt'),
+(18, 11, '2018-05-29T13:07:59+09:00', 'lifelimas', 0, 'lighttt'),
+(19, 11, '2018-05-29T13:08:30+09:00', 'dddd', 1, 'dddd'),
+(20, 11, '2018-05-29T13:09:19+09:00', '111', 1, '11111'),
+(21, 11, '2018-05-29T13:16:49+09:00', '', 0, ''),
+(24, 5, '2018-05-29T16:41:43+09:00', '1200자는 짧습니다', 1, '11'),
+(28, 9, '2018-05-30T14:03:55+09:00', '1', 0, '1'),
+(29, 9, '2018-05-30T14:04:06+09:00', '1', 1, '0'),
+(30, 3, '2018-05-31T12:09:09+09:00', '이건 제목', 1, '이건 내용임');
 
 -- --------------------------------------------------------
 
@@ -74,7 +83,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`session_id`, `expires`, `data`) VALUES
-('XqGvU18B21ePYOGmKMt83gojv2JT4vmO', 1527601629, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"passport\":{\"user\":\"local:jiwoo@naver.com\"}}');
+('XqGvU18B21ePYOGmKMt83gojv2JT4vmO', 1527824861, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"passport\":{\"user\":\"local:shyme2055@naver.com\"}}');
 
 -- --------------------------------------------------------
 
@@ -103,7 +112,8 @@ INSERT INTO `users` (`id`, `authId`, `username`, `password`, `salt`, `block`) VA
 (7, 'local:jinyong@naver.com', 'jinyong@naver.com', '9oKgkyINbHXt1KRp70dwqGmBuCuF5abIrJHarHxS7mS2coMqlXCCi6ciz7YO9uOSahELgQ6i7HfbOkasoEfYHkolUWDCyA106dfXxaW+/lVGu4beFdU+7k3riuquQ0lT0fclRQluLHxEUQ1zLXbnRHIxwtXv7fxJuId/cEezlwU=', 'YmsgF3blqh6sXVJWdx9wd36Z0ykCC2vb/0ajUNzgX8NDJgOc3tczQhjYQPkzoj+XVllQbJNu37fTKc9FT0KLGg==', 0),
 (8, 'local:ryan@kakao.com', 'ryan@kakao.com', 'YL/WdA3Zsp+9JRqBIlAcoQZqSX71KBHmK12eEO1X0LDK9I6oQGP1quXuGvTgCoeVcN8UNaDuuktpOVrAIMOYL79uuPc1NGaKdvnff5JXOhAbL/Z1eClsyN9pPRzZft36Z+ns6aBnJReHhVsMQIX0vLJXrywrlD6KWOUBUkyZ//c=', 'bXl5K0lNfvWt5wHN79wZzX/NNCw35puD4e6KWzL8/3WtFYPUZTZHuXejHmL+z7dNXSBraHdfVo0kzEn53CycUw==', 0),
 (9, 'local:doublejbs@naver.com', 'doublejbs@naver.com', '7nua412BVW/T/37AbGCcvptoytnDP43gEh9F2THGB+jEUl+ZR2lgPUzwhtIfFfrLagxMULkre8gllljT4FVUAOx7d2a+jC7e1ylkQwFXCZSjN40Vb69or21juoV9bmkRcDB8D2Ne9rsq9+4CPVtjNZcZA+eb/oB9TlaalAsP1Gc=', 'xe5ZsLv/P9ofo6o6jC8ecYQpbPRhRwN4O0kfsngW26xpX4r97+Ojs/oJYyhujnFSvpG3PxmLSx0C5T8f6NwG4g==', 0),
-(10, 'local:pand3570', 'pand3570', 'AhRVhP6K1pwDRyvAx4UKhYg4gA/+EVORAYiF+k0G++bgUfEYY4VsAcB2I4+Ei1C0Dqgku0fNujOhtSy7YYb0K1nuWpJUDnTalQdghR2M3tJY84rbl2GOp05/fSndOqXIF0W2ja6bBWAZ0bdVwzwXGqzttm3qZ61vAwAujb7bZ5w=', 'jVSb2jA0sDGS7iFLHHJQwvmJvxgW3FflWn9qosz8efK4rWZ/RhFmBPId1+Vf2i91XtmHDhhiCS7OipV2RPn6DQ==', 0);
+(10, 'local:pand3570', 'pand3570', 'AhRVhP6K1pwDRyvAx4UKhYg4gA/+EVORAYiF+k0G++bgUfEYY4VsAcB2I4+Ei1C0Dqgku0fNujOhtSy7YYb0K1nuWpJUDnTalQdghR2M3tJY84rbl2GOp05/fSndOqXIF0W2ja6bBWAZ0bdVwzwXGqzttm3qZ61vAwAujb7bZ5w=', 'jVSb2jA0sDGS7iFLHHJQwvmJvxgW3FflWn9qosz8efK4rWZ/RhFmBPId1+Vf2i91XtmHDhhiCS7OipV2RPn6DQ==', 0),
+(11, 'local:jeongsuk', 'jeongsuk', 'BzCESV2jpkDJFUOVxL8gwj9bUVHcKHfGDZaig4TkWKwmHIEYp1HFnHHINQPrWJXd6igytxAIVqoywyQNZaoeNloSuTrh5xvAPv2XDwX/OrTFWlDHaoDqIk1SfU6Zw0rGR5Iy5OvXMdYwewn70UKlH/VyJk32ILxjH+P8rc2NNgA=', 'TMXMdcmY/Xjhv8Xau3yHbVze0bTt2PwYYKhMPp5+fBPMlSoZbjUNAD9YrFkf+KsNRc2hWCyLu9Q5pLQ4hhJhWA==', 0);
 
 --
 -- 덤프된 테이블의 인덱스
@@ -137,13 +147,13 @@ ALTER TABLE `users`
 -- 테이블의 AUTO_INCREMENT `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `postId` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `postId` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- 테이블의 AUTO_INCREMENT `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- 덤프된 테이블의 제약사항
