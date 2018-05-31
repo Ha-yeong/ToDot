@@ -6,6 +6,6 @@ app.use('/', index);
 var post = require('./routes/post')(app);
 var community = require('./routes/community')(app);
 
-app.listen(3003, function(){
-    console.log('Connected 3003 port!!!');
+app.listen(9949, function(){
+    console.log('Connected 9949 port!!!');
 });

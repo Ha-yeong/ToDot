@@ -17,10 +17,10 @@ module.exports = function() {
     saveUninitialized: true,
     store:new MySQLStore({
       host:'localhost',
-      port:3306,
+      port:4501,
       user:'root',
-      password:'anwjr0102',
-      database:'o2'
+      password:'gkdl28$*',
+      database:'todot'
     })
   }));
   app.use(express.static('./public'));
