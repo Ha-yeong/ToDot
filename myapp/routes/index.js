@@ -43,6 +43,28 @@ module.exports = function(passport)
       });
     });
   });
+    
+  route.get('/writepage', function(req, res){
+    res.render('writepage.ejs');
+  });
+    
+  route.post('/writepage', function(req, res){
+    var title = req.body.title;
+    var content = req.body.content;
+    var authorId = req.user.id;
+    if (req.body.share) share = 1;
+    else share = 0;
+    var date = moment().format();
+    var sql = 'INSERT INTO posts (authorId, date, title, share, content) VALUES(?, ?, ?, ?, ?)';
+    conn.query(sql, [authorId, date, title, share, content], function(err, results){
+      if(err){
+        console.log(err);
+        res.status(500);
+      } else {
+        res.redirect('/welcome');
+      }
+    });
+  });
 
   route.get('/logout', function(req, res){
     req.logout();

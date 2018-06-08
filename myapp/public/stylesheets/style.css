@@ -1,4 +1,15 @@
-
+html{
+    margin, padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+}
+li{
+    list-style-type: none;
+    
+}
 
 form {
     width: 320px;
@@ -13,7 +24,6 @@ form {
   margin-top: 10px;
 }
 #signup-link:link{
-
   color: white;
 }
 #signup-link:visited{
@@ -108,4 +118,23 @@ input {
 .look-away.playing.down .eyes,
 .look-away.playing.down .muzzle {
     animation-name: lookaway-down;
+}
+
+
+
+.sidebar{
+    position: absolute;
+    background-color: #2D2D2D;
+    height: 100% !important;
+    width: 120px;
+    left: -20px;
+    z-index: 3;
+}
+.sidebar-postlist{
+    position: absolute;
+    background-color: #888;
+    height: 100% !important;
+    width: 120px;
+    left: 200px;
+    z-index: 3;
 }

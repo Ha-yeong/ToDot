@@ -1,0 +1,243 @@
+/*
+* Write Page 
+*
+*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+html, body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+body {
+    background-color: #636c94;
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+button {
+    font-family: "Montserrat", Arial, sans-serif;
+    cursor: pointer;
+}
+h5{
+    margin: 0;
+}
+li{
+    list-style-type: none;
+}
+
+.text{
+    font-size :14px;
+}
+.mail-client {
+    width: 1300px;
+    height: 800px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.mail-client__left {
+    flex-basis: 10%;
+    background-color: #e6e9ec;
+}
+.mail-client__labels__item.selected{
+    font-weight: 700;
+}
+.mail-client__labels__item.selected .text{
+    color: deeppink;
+}
+.mail-client__left .new-message-btn {
+    background-color: #02c386;
+    color: #fff;
+    border: none;
+    padding-left: 20px;
+    text-align: left;
+    height: 75px;
+    width: 100%;
+    font-size: 14px;
+}
+.mail-client__left .new-message-btn > .icon {
+    margin-right: 10px;
+}
+.mail-client__left .mail-client__categories {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+.mail-client__left .mail-client__categories__item {
+    padding: 0 30px;
+    line-height: 2.5em;
+    display: flex;
+    justify-content: space-between;
+    color: #82929f;
+    cursor: pointer;
+}
+.mail-client__left .mail-client__categories__item:nth-child(1) > .text {
+    color: #000;
+}
+.mail-client__left .mail-client__categories__item:nth-child(1) > .number {
+    color: #538fff;
+}
+.mail-client__left .mail-client__labels {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    padding: 0 30px;
+}
+.mail-client__left .mail-client__labels__title {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.mail-client__left .mail-client__labels__item {
+    line-height: 2.5em;
+    color: #82929f;
+    cursor: pointer;
+}
+.mail-client__left .mail-client__labels__item > .icon {
+    margin-right: 10px;
+}
+.mail-client__left .mail-client__labels__item:nth-child(2) .icon {
+    color: #fd7c4e;
+}
+.mail-client__left .mail-client__labels__item:nth-child(3) .icon {
+    color: #c562ef;
+}
+.mail-client__left .mail-client__labels__item:nth-child(4) .icon {
+    color: #10c286;
+}
+.mail-client__left .mail-client__labels__add {
+    border: none;
+    background: none;
+    text-align: left;
+    outline: none;
+    padding: 0;
+    font-size: 14px;
+    margin-top: 15px;
+    color: #82929f;
+}
+.mail-client__left .mail-client__labels__add > .icon {
+    margin-right: 10px;
+}
+
+.mail-client .title-container input {
+    position: relative;
+    display: block;
+    width: 936px;
+    height: 80px;
+    top: 60px;
+    left: 80px;
+    border: 0px;
+    font-size: 50px;
+    padding: 6px 0px 0px 10px; /* placeholder padding */
+    box-sizing: border-box;
+    border-bottom: 1.2px solid rgb(200, 200, 200); 
+    opacity: 0.7;
+}
+.mail-client .title-container input::placeholder{
+    opacity: 0.6;
+}
+.emoji-container{
+    position: relative;
+    padding: 0 10px;
+    width: 400px;
+    top: 80px;
+    left: 80px;
+    bottom: 0;
+    height: 30px;   
+}
+.emoji-container .emoji-list{
+    position: absolute;
+    top: -3px;
+    margin-left: 10px;
+    left: 130px;
+    float: left;
+}
+.emoji-container li.emoji{
+    opacity: 0.5;
+    float: left;
+}
+.emoji-container li.happy{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-image: url('../img/happy.png');
+    background-size: contain;
+    margin-right: 20px;
+}
+.emoji-container li.fun{
+    width: 20px;
+    height: 20px;
+    background-image: url('../img/fun.png');
+    background-size: contain;
+    margin-right: 20px;
+}
+.emoji-container li.angry{
+    width: 20px;
+    height: 20px;
+    background-image: url('../img/angry.png');
+    background-size: contain;
+    margin-right: 20px;
+}
+.emoji-container li.screaming{
+    width: 20px;
+    height: 20px;
+    background-image: url('../img/screaming.png');
+    background-size: contain;
+    margin-right: 20px;
+}
+.emoji-container li.thinking{
+    width: 20px;
+    height: 20px;
+    background-image: url('../img/thinking.png');
+    background-size: contain;
+    margin-right: 20px;
+}
+.emoji-container li.sad{
+    width: 20px;
+    height: 20px;
+    background-image: url('../img/sad.png');
+    background-size: contain;
+}
+.emoji-container li.emoji-selected{
+    opacity: 1.0;
+}
+.emoji-container h5{
+    font-size: 12px;
+    font-weight: 400;
+    color: gray;
+}
+.mail-client .content-container{
+    position: relative;
+    left: 80px;
+    top: 100px;
+    bottom: 0;
+}
+.mail-client .content-container textarea{
+    padding: 10px;
+    border: none;
+    font-size: 18px;
+    opacity: 0.7;
+    resize: auto;
+    overflow: hidden;
+    min-height: 50px;
+    max-height: 500px;
+    background-color: white;
+    flex-direction: column;
+    cursor: text;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+.mail-client .post-button {
+    position: relative;
+    top: 130px;
+    left: 880px;
+    border: 0;
+    color: white;
+    background-color: #02c386;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+
+
+
