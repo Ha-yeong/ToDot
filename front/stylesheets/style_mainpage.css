@@ -16,7 +16,6 @@ h5{
     margin: 0;
 }
 
-
 .text{
     font-size :14px;
 }
@@ -173,6 +172,8 @@ h5{
 .mail-client__right {
     flex-basis: 60%;
     position: relative;
+/*    background-image: url('wongoji.jpg');*/
+    
 }
 .mail-client__right .mail-client__right__up-section {
     display: flex;
