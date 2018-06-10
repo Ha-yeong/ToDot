@@ -4,7 +4,7 @@ module.exports = function() {
     host     : 'localhost',
     user     : 'root',
     password : 'anwjr0102',
-    database : 'o2'
+    database : 'todot'
   });
   conn.connect();
   return conn;

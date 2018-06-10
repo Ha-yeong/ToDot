@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <meta charset="utf-8" />
-  </head>
-  <body>
-    <h1>View Community Post</h1>
-    <p>
-      <a href="/community">go to community</a>
-    </p>
-    <p>
-      <a href="/logout">logout</a>
-    </p>
-    <p>
-      쪽지보내기
-    </p>
-
-    <p>
-      제목 : <%= post.title %>
-    </p>
-    <p>
-      내용 : <%= post.content %>
-    </p>
-    <a href="/community">뒤로가기</a>
+    <head>
+        <title>To.</title>
+        <link rel='stylesheet' href='/stylesheets/style_mainpage.css' />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div class="mail-client">
+            <section class="mail-client__left">
+                <button class="new-message-btn"><span class="icon fa fa-edit"></span><span>투-닷-</span></button>
+                <section class="mail-client__labels">
+                    <span class="mail-client__labels__title">Menu</span>
+                    <a class="mail-client__labels__item" href='/writepage'>
+                        <span class="text">새 글 작성</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/mypage'>
+                        <span class="text">내 글</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/community'>
+                        <span class="text" style="color: #800000; font-weight: 700;">커뮤니티</span>
+                    </a>
+                    <a class="mail-client__labels__item">
+                        <span class="text">분석</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/logout'>
+                        <span class="text">로그아웃</span>
+                    </a>
+                </section>
+            </section>
+            <section class="community-content-wrapper">
+                <a class="go-back-icon" href="/community"><img src="/img/left.png" style="width: 30px; position: relative; float: right; right: 40px; top: 40px; opacity:0.9;"></a>
+                <a class="go-back-text" href="/community">돌아가기</a>
+                <form action="/sendmessage" method="post">
+                    <div class="community-content">
+                        <div class="user-post">
+                            <div class="title"><%= post.title %></div>
+                            <div class="content"><%= post.content %></div>
+                        </div>
+                        <div class="response-container">
+                            <h5 style="padding-bottom: 10px;">Enter a response</h5>
+                            <textarea class="commnunity-content-response" cols="30" name="message" rows="10" placeholder="Write message."></textarea>
+                        </div>
+                    </div>
+                    <button class="response-send-button" type="submit">Send</button>
+                </form>
+            </section>
+        </div>
+    </body>
 </html>

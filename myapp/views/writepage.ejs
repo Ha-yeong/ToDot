@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To.</title>
+        <link rel='stylesheet' type='text/css' href='./stylesheets/style_writepage.css' />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div class="mail-client">
+        <section class="mail-client__left">
+                <button class="new-message-btn"><span class="icon fa fa-edit"></span><span>투-닷-</span></button>
+                <section class="mail-client__labels">
+                    <span class="mail-client__labels__title">Menu</span>
+                    <a class="mail-client__labels__item" href='/writepage'>
+                        <span class="text" style="color: #800000; font-weight: 700;">새 글 작성</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/mypage'>
+                        <span class="text">내 글</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/community'>
+                        <span class="text">커뮤니티</span>
+                    </a>
+                    <a class="mail-client__labels__item">
+                        <span class="text">분석</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/logout'>
+                        <span class="text">로그아웃</span>
+                    </a>
+                </section>
+
+            </section>
+        <div class="l-post">
+           <form action="/writepage" method="post">
+            <div class="title-container">
+                <div class="title-input"><input class="title-input-box" placeholder="Title" type="text" name="title"/>
+                </div>
+            </div>
+            <div class="emoji-container">
+                <h5>Select your mood: </h5>
+                <div class="emoji-list">
+                    <label>
+                        <input type="radio" name="emoji" class="emoji happy" value="0" />
+                        <img src="./img/happy.png" style="width:20px; margin-right: 4px;">
+                    </label>
+                    <label>
+                        <input type="radio" name="emoji" class="emoji fun" value="1" />
+                        <img src="./img/fun.png" style="width:20px; margin-right: 4px;">
+                    </label>
+                    <label>
+                        <input type="radio" name="emoji" class="emoji angry" value="2" />
+                        <img src="./img/angry.png" style="width:20px; margin-right: 4px;">
+                    </label>
+                    <label>
+                        <input type="radio" name="emoji" class="emoji screaming" value="3" />
+                        <img src="./img/screaming.png" style="width:20px; margin-right: 4px;">
+                    </label>
+                    <label>
+                        <input type="radio" name="emoji" class="emoji thinking" value="4" />
+                        <img src="./img/thinking.png" style="width:20px; margin-right: 4px;">
+                    </label>
+                    <label>
+                        <input type="radio" name="emoji" class="emoji sad" value="5" />
+                        <img src="./img/sad.png" style="width:20px; margin-right: 4px;">
+                    </label>
+                </div>
+            </div>
+            <label class="container">커뮤니티에 공유하기
+                <input type="checkbox" name="share">
+                <span class="checkmark"></span>
+            </label>
+            <div class="content-container">
+                <div class="content-input"><textarea class="content-input-area" cols="100" rows="20" placeholder="Write your story" name="content"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="post-button">Send</button>
+            </form>
+        </div>
+
+        </div>
+        <script src="script_mainpage.js"></script>
+    </body>
+</html>

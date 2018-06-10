@@ -11,7 +11,7 @@ module.exports = function(passport)
     passport.authenticate(
       'local',
       {
-        successRedirect: '/welcome',
+        successRedirect: '/mypage',
         failureRedirect: '/',
         failureFlash: false
       }
@@ -36,7 +36,7 @@ module.exports = function(passport)
         } else {
           req.login(user, function(err){
             req.session.save(function(){
-              res.redirect('/welcome');
+              res.redirect('/mypage');
             });
           });
         }
@@ -47,7 +47,7 @@ module.exports = function(passport)
   route.get('/logout', function(req, res){
     req.logout();
     req.session.save(function(){
-      res.redirect('/welcome');
+      res.redirect('/mypage');
     });
   });
 

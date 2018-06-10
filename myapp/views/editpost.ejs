@@ -1,26 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <meta charset="utf-8" />
-  </head>
-  <body>
-    <h1>Edit Post</h1>
-    <form action=<%= "/post/"+post.postId+"/edit" %> method="post">
-      <p>
-        <input type="text" name="title" value=<%= post.title %> placeholder="title">
-      </p>
-      <p>
-        <input type="text" name="content" value=<%= post.content %> placeholder="content">
-      </p>
-      <p>
-        <input type="checkbox" name="share">공유
-      </p>
-      <p>
-        <input type="submit">
-      </p>
-      <a href=<%= "/post/"+post.postId %>>뒤로가기</a>
-    </form>
-  </body>
+    <head>
+        <title>To.</title>
+        <link rel='stylesheet' type='text/css' href='/stylesheets/style_writepage.css'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div class="mail-client">
+        <section class="mail-client__left">
+                <button class="new-message-btn"><span class="icon fa fa-edit"></span><span>투-닷-</span></button>
+                <section class="mail-client__labels">
+                    <span class="mail-client__labels__title">Menu</span>
+                    <a class="mail-client__labels__item" href='/writepage'>
+                        <span class="text">새 글 작성</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/mypage'>
+                        <span class="text" style="color: #800000; font-weight: 700;">내 글</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/community'>
+                        <span class="text">커뮤니티</span>
+                    </a>
+                    <a class="mail-client__labels__item">
+                        <span class="text">분석</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/logout'>
+                        <span class="text">로그아웃</span>
+                    </a>
+                </section>
+
+            </section>
+        <div class="l-post">
+           <form action=<%= "/edit/"+post.postId %> method="post">
+            <div class="title-container">
+                <div class="title-input"><input class="title-input-box" placeholder="Title" type="text" name="title" value="<%= post.title %>">
+                </div>
+            </div>
+            <div class="emoji-container">
+                <h5>Select your mood: </h5>
+                <div class="emoji-list">
+                    <li class="emoji happy"></li>
+                    <li class="emoji fun"></li>
+                    <li class="emoji angry"></li>
+                    <li class="emoji screaming"></li>
+                    <li class="emoji thinking"></li>
+                    <li class="emoji sad"></li>
+                </div>
+            </div>
+            <label class="container">커뮤니티에 공유하기
+                <input type="checkbox" name="share">
+                <span class="checkmark"></span>
+            </label>
+            <div class="content-container">
+                <div class="content-input"><textarea class="content-input-area" cols="100" rows="20" placeholder="Write your story" name="content"><%= post.content %></textarea>
+                </div>
+            </div>
+            <button type="submit" class="post-button">Send</button>
+            </form>
+        </div>
+        </div>
+        <script src="/script_mainpage.js"></script>
+    </body>
 </html>

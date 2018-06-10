@@ -1,18 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <meta charset="utf-8" />
-  </head>
-  <body>
-    <h1>Community</h1>
-    <ul>
-      <% for (var i = 0; i < posts.length; i++) { %>
-      <li>
-        <a href=<%= '/community/'+posts[i].postId %>><%= posts[i].title %></a>
-      </li>
-      <% } %>
-    </ul>
-  </body>
+    <head>
+        <title>To.</title>
+        <link rel='stylesheet' href='./stylesheets/style_mainpage.css' />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div class="mail-client">
+            <section class="mail-client__left">
+                <button class="new-message-btn"><span class="icon fa fa-edit"></span><span>투-닷-</span></button>
+                <section class="mail-client__labels">
+                    <span class="mail-client__labels__title">Menu</span>
+                    <a class="mail-client__labels__item" href='/writepage'>
+                        <span class="text">새 글 작성</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/mypage'>
+                        <span class="text">내 글</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/community'>
+                        <span class="text" style="color: #800000; font-weight: 700;">커뮤니티</span>
+                    </a>
+                    <a class="mail-client__labels__item">
+                        <span class="text">분석</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/logout'>
+                        <span class="text">로그아웃</span>
+                    </a>
+                </section>
+            </section>
+            <section class="community-l">
+                <div class="community-board">
+                    <h2 class="header">Community</h2>
+                    <p class="header-intro">상대에게 위로의 쪽지를 보내보세요.</p>
+                    <ul class="display-posts-listing">
+                        <% for (var i = 0; i < posts.length; i++) { %>
+                        <li class="listing-post">
+                            <a class="title" href=<%= '/community/'+posts[i].postId %>><%= posts[i].title %></a>
+                            <span class="date"><%= posts[i].date %></span>
+                        </li>
+                        <% } %>
+                    </ul>
+
+                </div>
+            </section>
+        </div>
+        <script src="script_mainpage.js"></script>
+    </body>
 </html>
