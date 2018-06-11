@@ -29,22 +29,30 @@ module.exports = function(app)
       });
     }
   });
-///////////수정
-  app.post('/sendmessage', function(req, res){
-    var message = req.body.message;
-    var authorId = req.user.id;
 
-
+  app.post('/sendmessage/:id', function(req, res){
+    var senderId = req.user.id;
+    var receiverId;
     var date = moment().format();
-    res.send(message + " " + authorId + " " + date);
-    // var sql = 'INSERT INTO posts (authorId, date, title, share, content) VALUES(?, ?, ?, ?, ?)';
-    // conn.query(sql, [authorId, date, title, share, content], function(err, results){
-    //   if(err){
-    //     console.log(err);
-    //     res.status(500);
-    //   } else {
-    //     res.redirect('/mypage');
-    //   }
-    // });
+    var postId = req.params.id;
+    var content = req.body.message;
+    var sql = 'SELECT authorId FROM posts WHERE postId=?';
+    conn.query(sql, [postId], function(err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        receiverId = result[0];
+        res.send(receiverId);
+        // var sql = 'INSERT INTO messages (senderId, receiverId, date, postId, content) VALUES(?, ?, ?, ?, ?)';
+        // conn.query(sql, [senderId, receiverId, date, postId, content], function(err, results){
+        //   if(err){
+        //     console.log(err);
+        //     res.status(500);
+        //   } else {
+        //     res.redirect('/community/:id');
+        //   }
+        // });
+      }
+    });
   });
 };

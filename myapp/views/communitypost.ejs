@@ -33,7 +33,7 @@
             <section class="community-content-wrapper">
                 <a class="go-back-icon" href="/community"><img src="/img/left.png" style="width: 30px; position: relative; float: right; right: 40px; top: 40px; opacity:0.9;"></a>
                 <a class="go-back-text" href="/community">돌아가기</a>
-                <form action="/sendmessage" method="post">
+                <form action=<%= "/sendmessage/"+post.postId %> method="post">
                     <div class="community-content">
                         <div class="user-post">
                             <div class="title"><%= post.title %></div>
