@@ -4,6 +4,7 @@ module.exports = function(passport)
   var hasher = bkfd2Password();
   var conn = require('../config/db')();
   var route = require('express').Router();
+
   route.get('/', function(req, res){
     res.render('index.ejs');
   });

@@ -26,8 +26,7 @@ module.exports = function(app) {
     });
   });
 
-  passport.use(new LocalStrategy(
-    function(username, password, done){
+  passport.use(new LocalStrategy(function(username, password, done){
       var uname = username;
       var pwd = password;
       var sql = 'SELECT * FROM users WHERE authId=?';
