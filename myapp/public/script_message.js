@@ -1,20 +1,36 @@
 $('li.mail-client__email-item').click( function() {
-  var index = $(this).find('.fake_index').text();
-  var title = $(this).find('.fake_title').text();
+  var senderId = $(this).find('.fake_senderId').text();
   var content = $(this).find('.fake_content').text();
 
   $(this).toggleClass('checked').siblings().removeClass('.mail-client__email-item selected');
   $(this).removeClass('.mail-client__email-item').addClass('mail-client__email-item selected');
 
-  $('h4.mail-client__email-detail__title').text(title);
   $('.mail-client__email-detail__description').text(content);
+
+  var blockBtn = document.getElementById('blockBtn');
+  blockBtn.onclick = function() {
+    if (confirm('정말 차단하시겠습니까?')) {
+        window.location.href= '/block/'+senderId;
+    }
+  };
 });
 
 // var sendButton = document.getElementById('sendButton');
 // var textarea = document.getElementById('textarea');
-var chattheme = document.getElementById('chattheme');
-var log = chattheme.getElementsByClassName('log')[0];
-var blank = document.createElement('div');
+
+// 게시글 눌렀을때만 수정 삭제 버튼 보이게 하기
+var $blockBtn = $('.mail-client__search-container');
+var $content = $('.mail-client__email-item');
+var bClicked = false;
+
+$content.click( function(){
+    $blockBtn.css("display", "flex");
+    bClicked = true;
+});
+if(bClicked==false){
+    $blockBtn.css("display", "none");
+}
+
 
 // var time;
 // var username;

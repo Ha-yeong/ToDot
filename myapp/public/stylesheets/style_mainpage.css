@@ -37,6 +37,9 @@ li{
 .fake_cover{
     display: none;
 }
+.fake_senderId{
+    display: none;
+}
 .text{
     font-size :14px;
 }
@@ -233,6 +236,18 @@ li{
     font-weight: 400;
     cursor: pointer;
 }
+
+.mail-client__center .mail-client__sort-by a{
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    padding: 5px 10px;
+    margin-right: 14px;
+    font-size: 10px;
+    font-weight: 400;
+    cursor: pointer;
+}
 .mail-client__right .mail-client__search-container {
     flex-basis: 40%;
     display: flex;
@@ -240,16 +255,6 @@ li{
     border-left: 1px solid rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding-left: 35px;
-}
-.mail-client__right .mail-client__search-container > .icon {
-    color: #a3adbb;
-    padding-right: 15px;
-    font-size: 18px;
-}
-.mail-client__right .mail-client__search-container > .mail-client__search-box {
-    border: none;
-    outline: none;
-    font-size: 18px;
 }
 .mail-client__right .mail-client__email-detail {
     margin-top: 50px;

@@ -1,4 +1,3 @@
-
 $('li.mail-client__email-item').click( function() {
   var index = $(this).find('.fake_index').text();
   var title = $(this).find('.fake_title').text();
@@ -41,7 +40,6 @@ $('li.mail-client__email-item').click( function() {
     }
   };
 });
-
 
 // 게시글 눌렀을때만 수정 삭제 버튼 보이게 하기
 var $editBtn = $('.mail-client__search-container');
