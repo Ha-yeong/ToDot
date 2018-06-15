@@ -3,6 +3,7 @@ module.exports = function(app)
   var conn = require('../config/db')();
   var moment = require('moment');
 
+  // 받은 쪽지함. receiver가 현재 로그인 된 사용자인 쪽지 목록을 불러옴
   app.get('/message', function(req, res){
     if(req.user && req.user.username) {
       var sql = 'SELECT * FROM messages WHERE receiverId=?';
@@ -19,6 +20,7 @@ module.exports = function(app)
     }
   });
 
+  // 보낸 쪽지함. sender가 현재 로그인 된 사용자인 쪽지 목록을 불러옴
   app.get('/message_sent', function(req, res){
     if(req.user && req.user.username) {
       var sql = 'SELECT * FROM messages WHERE senderId=?';
@@ -35,6 +37,7 @@ module.exports = function(app)
     }
   });
 
+  // 선택한 쪽지를 보낸 사용자의 'block'을 1 증가시킴
   app.get('/block/:id', function(req, res){
     var id = req.params.id;
     var blockSql = 'SELECT block FROM users WHERE id=?';

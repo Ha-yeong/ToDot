@@ -3,6 +3,7 @@ module.exports = function(app)
   var conn = require('../config/db')();
   var moment = require('moment');
 
+  // db에서 공유 설정된 post 정보를 받아오고 {posts}로 community.ejs에게 전달
   app.get('/community', function(req, res){
     if(req.user && req.user.username) {
       var sql = 'SELECT postId, title, date FROM posts WHERE share=1';
@@ -16,6 +17,7 @@ module.exports = function(app)
     }
   });
 
+  // db에서 선택한 post 정보를 받아오고 {post}로 communitypost.ejs에게 전달
   app.get('/community/:id', function(req, res){
     var postId = req.params.id;
     if (postId) {
@@ -30,6 +32,7 @@ module.exports = function(app)
     }
   });
 
+  // 지정한 post로 쪽지를 보냄. 쪽지 정보를 message db에 삽입
   app.post('/sendmessage/:id', function(req, res){
     var senderId = req.user.id;
     var receiverId;

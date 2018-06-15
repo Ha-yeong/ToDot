@@ -36,33 +36,34 @@
             <section class="mail-client__center" style="overflow: auto;">
                 <div class="mail-client__sort-by">
                     <span class="sort-by"></span><span class="date"></span><span class="icon fa fa-caret-down"></span>
-                <div class="mail-client__email-list">
-                   <%for (var i = 0; i<posts.length; i++){%>
-                    <li class="mail-client__email-item">
-                        <p class="fake_index"><%= posts[i].postId %></p>
-                        <p class="fake_title"><%= posts[i].title %></p>
-                        <p class="fake_content"><%= posts[i].content %></p>
-                        <p class="fake_date"><%= posts[i].date %></p>
-                        <p class="fake_cover"><%= posts[i].coverId %></p>
-
-                        <h5 class="mail-client__email-item__from">
-                            <% if(posts[i].title.length > 16) { %>
-                                <%= posts[i].title.slice(0,15) %>
-                            <% } else { %>
-                              <%= posts[i].title %>
-                            <% } %>
-                        </h5>
-
-                        <p class="mail-client__email-item__preview">
-                            <% if(posts[i].content.length > 43) { %>
-                                <%= posts[i].content.slice(0,42) %>
-                            <% } else { %>
-                              <%= posts[i].content %>
-                            <% } %>
-                        </p>
-                    </li>
-                    <% } %>
                 </div>
+                  <div class="mail-client__email-list">
+                     <%for (var i = 0; i<posts.length; i++){%>
+                      <li class="mail-client__email-item">
+                          <p class="fake_index"><%= posts[i].postId %></p>
+                          <p class="fake_title"><%= posts[i].title %></p>
+                          <p class="fake_content"><%= posts[i].content %></p>
+                          <p class="fake_date"><%= posts[i].date %></p>
+                          <p class="fake_cover"><%= posts[i].coverId %></p>
+
+                          <h5 class="mail-client__email-item__from">
+                              <% if(posts[i].title.length > 16) { %>
+                                  <%= posts[i].title.slice(0,15) %>
+                              <% } else { %>
+                                <%= posts[i].title %>
+                              <% } %>
+                          </h5>
+
+                          <p class="mail-client__email-item__preview">
+                              <% if(posts[i].content.length > 43) { %>
+                                  <%= posts[i].content.slice(0,42) %>
+                              <% } else { %>
+                                <%= posts[i].content %>
+                              <% } %>
+                          </p>
+                      </li>
+                      <% } %>
+                  </div>
             </section>
             <section class="mail-client__right">
               <div class="mail-client__right__up-section">

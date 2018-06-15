@@ -1,6 +1,6 @@
 module.exports = function(app) {
   var conn = require('./db')();
-  var bkfd2Password = require("pbkdf2-password");
+  var bkfd2Password = require("pbkdf2-password"); // 보안을 위해 pbkdf2 모듈 사용
   var passport = require('passport');
   var LocalStrategy = require('passport-local').Strategy;
   var hasher = bkfd2Password();
@@ -13,6 +13,7 @@ module.exports = function(app) {
     done(null, user.authId);
   });
 
+  // 로그인 세션 유지
   passport.deserializeUser(function(id, done) {
     console.log('deserializeUser', id);
     var sql = 'SELECT * FROM users WHERE authId=?';
@@ -26,6 +27,7 @@ module.exports = function(app) {
     });
   });
 
+  // 로그인 정보를 확인
   passport.use(new LocalStrategy(function(username, password, done){
       var uname = username;
       var pwd = password;

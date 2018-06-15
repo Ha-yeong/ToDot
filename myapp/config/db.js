@@ -1,3 +1,5 @@
+// mysql을 불러옴
+
 module.exports = function() {
   var mysql = require('mysql');
   var conn = mysql.createConnection({

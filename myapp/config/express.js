@@ -22,7 +22,7 @@ module.exports = function() {
       database:'todot'
     })
   }));
-  app.use(express.static('./public'));
+  app.use(express.static('./public'));  // public 폴더에서 정적 파일 관리
 
   return app;
 };

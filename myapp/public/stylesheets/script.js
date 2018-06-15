@@ -1,3 +1,5 @@
+// 로그인 화면의 움직이는 라이언
+
 (function(){
 
 const ryan = document.querySelector('#ryan');
