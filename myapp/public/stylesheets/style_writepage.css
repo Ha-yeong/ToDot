@@ -27,7 +27,12 @@ a{
 li{
     list-style-type: none;
 }
-
+.fake_emoji{
+    display: none;
+}
+.fake_cover{
+    display: none;
+}
 .text{
     font-size :14px;
 }
@@ -158,6 +163,27 @@ li{
     float: left;
 }
 .emoji-container h5{
+    font-size: 12px;
+    font-weight: 400;
+    color: gray;
+}
+.cover-container{
+    position: relative;
+    padding: 0 10px;
+    width: 600px;
+    top: 120px;
+    left: 80px;
+    bottom: 0;
+    height: 30px;
+}
+.cover-container .cover-list{
+    position: absolute;
+    top: 0px;
+    margin-left: 10px;
+    left: 130px;
+    float: left;
+}
+.cover-container h5{
     font-size: 12px;
     font-weight: 400;
     color: gray;

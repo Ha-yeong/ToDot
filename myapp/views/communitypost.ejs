@@ -22,8 +22,11 @@
                     <a class="mail-client__labels__item" href='/community'>
                         <span class="text" style="color: #800000; font-weight: 700;">커뮤니티</span>
                     </a>
-                    <a class="mail-client__labels__item">
-                        <span class="text">분석</span>
+                    <a class="mail-client__labels__item" href='/message'>
+                        <span class="text">쪽지</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/statistics'>
+                        <span class="text">통계</span>
                     </a>
                     <a class="mail-client__labels__item" href='/logout'>
                         <span class="text">로그아웃</span>
@@ -44,9 +47,10 @@
                             <textarea class="commnunity-content-response" cols="30" name="message" rows="10" placeholder="Write message."></textarea>
                         </div>
                     </div>
-                    <button class="response-send-button" type="submit">Send</button>
+                    <button class="response-send-button" type="submit" id="sendBtn">Send</button>
                 </form>
             </section>
         </div>
+        <script src="script_mainpage.js"></script>
     </body>
 </html>

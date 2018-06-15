@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To.</title>
+        <link rel='stylesheet' type='text/css' href='./stylesheets/style_mainpage.css' />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <div class="mail-client">
+            <section class="mail-client__left">
+                <button class="new-message-btn"><span class="icon fa fa-edit"></span><span>투-닷-</span></button>
+                <section class="mail-client__labels">
+                    <span class="mail-client__labels__title">Menu</span>
+                    <a class="mail-client__labels__item" href='/writepage'>
+                        <span class="text">새 글 작성</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/mypage'>
+                        <span class="text">내 글</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/community'>
+                        <span class="text">커뮤니티</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/message'>
+                        <span class="text">쪽지</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/statistics'>
+                        <span class="text" style="color: #800000; font-weight: 700;">통계</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/logout'>
+                        <span class="text">로그아웃</span>
+                    </a>
+                </section>
+            </section>
+            <section class="statistics_left" style="overflow: auto;">
+                <h1>사용 시간대</h1>
+                    <p class="fake_content" id="fake_content1"><%= usetime %></p>
+                    <canvas id="myChart1" width="400" height="300"></canvas>
+                    <script>
+                        var ctx1 = document.getElementById('myChart1').getContext('2d');
+                        var usetime = document.getElementById('fake_content1').innerHTML;
+                        var sp = usetime.split(',');
+                        var chart1 = new Chart(ctx1, {
+                            type: 'line',
+                            data: {
+                                labels: ["00am", "", "", "03am", "", "", "06am", "", "", "09am", "", "",  "12pm", "", "",  "3pm", "", "",  "6pm", "", "",  "9pm", "", ""],
+                                datasets: [{
+                                    label: '사용 시간대',
+                                    borderColor: 'rgb(54, 162, 235)',
+                                    data: sp,
+                                    lineTension: 0
+                                }]
+                            },
+                            options: {}
+                        });
+                    </script>
+
+                <h1>감정 빈도</h1>
+                    <p class="fake_content" id="fake_content2"><%= useemoji %></p>
+                    <canvas id="myChart2" width="400" height="200"></canvas>
+                    <script>
+                        var ctx2 = document.getElementById('myChart2').getContext('2d');
+                        var useemoji = document.getElementById('fake_content2').innerHTML;
+                        var sp = useemoji.split(',');
+                        var chart2 = new Chart(ctx2, {
+                            type: 'bar',
+                            data: {
+                                labels: ["최고", "좋아", "화나", "절망", "곰곰", "슬퍼"],
+                                datasets: [{
+                                    label: '감정 빈도',
+                                    borderColor: 'rgb(54, 162, 235)',
+                                    data: sp
+                                }]
+                            },
+                            options: {}
+                        });
+                    </script>
+
+
+            </section>
+            <section class="statistics_right" style="overflow: auto;" style="float: right;">
+                <h1>업로드 포스트</h1>
+            </section>
+        </div>
+
+
+    </body>
+</html>

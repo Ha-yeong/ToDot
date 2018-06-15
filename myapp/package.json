@@ -8,6 +8,7 @@
   "dependencies": {
     "@google-cloud/language": "^1.2.0",
     "body-parser": "^1.18.3",
+    "chart.js": "^2.7.2",
     "cookie-parser": "~1.4.3",
     "date-utils": "^1.2.21",
     "debug": "~2.6.9",

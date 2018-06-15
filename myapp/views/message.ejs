@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To.</title>
+        <link rel='stylesheet' type='text/css' href='/stylesheets/style_mainpage.css' />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div class="mail-client">
+            <section class="mail-client__left">
+                <button class="new-message-btn"><span class="icon fa fa-edit"></span><span>투-닷-</span></button>
+                <section class="mail-client__labels">
+                    <span class="mail-client__labels__title">Menu</span>
+                    <a class="mail-client__labels__item" href='/writepage'>
+                        <span class="text">새 글 작성</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/mypage'>
+                        <span class="text">내 글</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/community'>
+                        <span class="text">커뮤니티</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/message'>
+                        <span class="text" style="color: #800000; font-weight: 700;">쪽지</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/statistics'>
+                        <span class="text">통계</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/logout'>
+                        <span class="text">로그아웃</span>
+                    </a>
+                </section>
+            </section>
+            <section class="mail-client__center" style="overflow: auto;">
+                <div class="mail-client__sort-by">
+                    <a href="/message">받은 쪽지함</a>
+                    <a href="/message_sent">  보낸 쪽지함</a>
+                </div>
+                <div class="mail-client__email-list">
+                  <% for (var i = 0; i<posts.length; i++){ %>
+                   <li class="mail-client__email-item">
+                       <span class="mail-client__email-item__time"><%= posts[i].date %></span><span class="mail-client__email-item__mark"></span>
+
+                       <p class="fake_index"><%= posts[i].postId %></p>
+                       <p class="fake_title"><%= posts[i].title %></p>
+                       <p class="fake_content"><%= posts[i].content %></p>
+
+                       <h5 class="mail-client__email-item__from">
+                           <% if(posts[i].title.length > 16) { %>
+                               <%= posts[i].title.slice(0,15) %>
+                           <% } else { %>
+                             <%= posts[i].title %>
+                           <% } %>
+                       </h5>
+                       <p class="mail-client__email-item__preview">
+                           <% if(posts[i].content.length > 43) { %>
+                               <%= posts[i].content.slice(0,42) %>
+                           <% } else { %>
+                             <%= posts[i].content %>
+                           <% } %>
+                       </p>
+                   </li>
+                   <% } %>
+                </div>
+            </section>
+            <section class="mail-client__right">
+              <div class="mail-client__right__up-section">
+                  <div class="mail-client__email-actions">
+                      <span class="icon fa fa-trash"></span><span class="icon fa fa-mail-reply"></span><span class="icon fa fa-mail-reply-all"></span><span class="icon fa fa-long-arrow-right"></span><span class="icon fa fa-ellipsis-h"></span>
+                  </div>
+              </div>
+              <div class="mail-client__email-detail">
+                  <h4 class="mail-client__email-detail__title"></h4>
+                  <div class="mail-client__email-detail__description"></div>
+              </div>
+
+              <% for (var i = 0; i<messages.length; i++){ %>
+
+                <%= messages[i].msgContent %>
+              <% } %>
+              <div class="chattheme" id="chattheme">
+                  <div class="log"></div>
+                  <div class="sendmsg">
+                      <textarea class="textarea" id="textarea"></textarea>
+                      <div class="button" id="sendButton"><p>SEND</p></div>
+                      <div class="clear"></div>
+                  </div>
+              </div>
+            </section>
+        </div>
+        <script src="script_message.js"></script>
+    </body>
+</html>

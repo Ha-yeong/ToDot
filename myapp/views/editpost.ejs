@@ -9,7 +9,7 @@
     </head>
     <body>
         <div class="mail-client">
-        <section class="mail-client__left">
+            <section class="mail-client__left">
                 <button class="new-message-btn"><span class="icon fa fa-edit"></span><span>투-닷-</span></button>
                 <section class="mail-client__labels">
                     <span class="mail-client__labels__title">Menu</span>
@@ -22,14 +22,16 @@
                     <a class="mail-client__labels__item" href='/community'>
                         <span class="text">커뮤니티</span>
                     </a>
-                    <a class="mail-client__labels__item">
-                        <span class="text">분석</span>
+                    <a class="mail-client__labels__item" href='/message'>
+                        <span class="text">쪽지</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/statistics'>
+                        <span class="text">통계</span>
                     </a>
                     <a class="mail-client__labels__item" href='/logout'>
                         <span class="text">로그아웃</span>
                     </a>
                 </section>
-
             </section>
         <div class="l-post">
            <form action=<%= "/edit/"+post.postId %> method="post">
@@ -40,44 +42,91 @@
             <div class="emoji-container">
                 <h5>Select your mood: </h5>
                 <div class="emoji-list">
+                    <p class="fake_emoji" id="fake_emoji"><%= post.emoji %></p>
                     <label>
-                        <input type="radio" name="emoji" class="emoji happy" value="0" />
+                        <input type="radio" name="emoji" class="emoji happy" value="0" id="idhappy"/>
                         <img src="/img/happy.png" style="width:20px; margin-right: 4px;">
                     </label>
                     <label>
-                        <input type="radio" name="emoji" class="emoji fun" value="1" />
+                        <input type="radio" name="emoji" class="emoji fun" value="1" id="idfun"/>
                         <img src="/img/fun.png" style="width:20px; margin-right: 4px;">
                     </label>
                     <label>
-                        <input type="radio" name="emoji" class="emoji angry" value="2" />
+                        <input type="radio" name="emoji" class="emoji angry" value="2" id="idangry"/>
                         <img src="/img/angry.png" style="width:20px; margin-right: 4px;">
                     </label>
                     <label>
-                        <input type="radio" name="emoji" class="emoji screaming" value="3" />
+                        <input type="radio" name="emoji" class="emoji screaming" value="3" id="idscreaming"/>
                         <img src="/img/screaming.png" style="width:20px; margin-right: 4px;">
                     </label>
                     <label>
-                        <input type="radio" name="emoji" class="emoji thinking" value="4" />
+                        <input type="radio" name="emoji" class="emoji thinking" value="4" id="idthinking"/>
                         <img src="/img/thinking.png" style="width:20px; margin-right: 4px;">
                     </label>
                     <label>
-                        <input type="radio" name="emoji" class="emoji sad" value="5" />
+                        <input type="radio" name="emoji" class="emoji sad" value="5" id="idsad"/>
                         <img src="/img/sad.png" style="width:20px; margin-right: 4px;">
                     </label>
                 </div>
+                <script>
+                    var fake_emoji = document.getElementById('fake_emoji').innerHTML;
+                    fake_emoji = parseInt(fake_emoji);
+                    if (fake_emoji == 0) document.getElementById('idhappy').checked = 1;
+                    else if (fake_emoji == 1) document.getElementById('idfun').checked = 1;
+                    else if (fake_emoji == 2) document.getElementById('idangry').checked = 1;
+                    else if (fake_emoji == 3) document.getElementById('idscreaming').checked = 1;
+                    else if (fake_emoji == 4) document.getElementById('idthinking').checked = 1;
+                    else if (fake_emoji == 5) document.getElementById('idsad').checked = 1;
+                </script>
             </div>
             <label class="container">커뮤니티에 공유하기
-                <input type="checkbox" name="share">
+                <% if(post.share == 1) { %>
+                    <input type="checkbox" name="share" checked="checked">
+                <% } else { %>
+                    <input type="checkbox" name="share">
+                <% } %>
                 <span class="checkmark"></span>
             </label>
             <div class="content-container">
-                <div class="content-input"><textarea class="content-input-area" cols="100" rows="20" placeholder="Write your story" name="content"><%= post.content %></textarea>
-                </div>
+                <div class="content-input"><textarea class="content-input-area" cols="100" rows="20" placeholder="Write your story" name="content"><%= post.content %></textarea></div>
             </div>
+
+            <div class="cover-container">
+                <h5>Select Cover </h5>
+                <div class="cover-list">
+                    <p class="fake_cover" id="fake_cover"><%= post.coverId %></p>
+                    <label>
+                        <input type="radio" name="cover" class="cover" value="0" id="cover0"/>
+                        <img src="/cover/0.jpg" style="width:60px; height:22px; margin-right: 4px;">
+                    </label>
+                    <label>
+                        <input type="radio" name="cover" class="cover" value="1" id="cover1"/>
+                        <img src="/cover/1.jpg" style="width:60px; height:22px; margin-right: 4px;">
+                    </label>
+                    <label>
+                        <input type="radio" name="cover" class="cover" value="2" id="cover2"/>
+                        <img src="/cover/2.jpg" style="width:60px; height:22px; margin-right: 4px;">
+                    </label>
+                    <label>
+                        <input type="radio" name="cover" class="cover" value="3" id="cover3"/>
+                        <img src="/cover/3.jpg" style="width:60px; height:22px; margin-right: 4px;">
+                    </label>
+                </div>
+                <script>
+                    var fake_cover = document.getElementById('fake_cover').innerHTML;
+                    fake_cover = parseInt(fake_cover);
+                    if (fake_cover == 0) document.getElementById('cover0').checked = 1;
+                    else if (fake_cover == 1) document.getElementById('cover1').checked = 1;
+                    else if (fake_cover == 2) document.getElementById('cover2').checked = 1;
+                    else if (fake_cover == 3) document.getElementById('cover3').checked = 1;
+                </script>
+            </div>
+
             <button type="submit" class="post-button">Send</button>
             </form>
         </div>
         </div>
         <script src="/script_mainpage.js"></script>
+
     </body>
 </html>

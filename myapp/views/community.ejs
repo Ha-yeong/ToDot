@@ -22,8 +22,11 @@
                     <a class="mail-client__labels__item" href='/community'>
                         <span class="text" style="color: #800000; font-weight: 700;">커뮤니티</span>
                     </a>
-                    <a class="mail-client__labels__item">
-                        <span class="text">분석</span>
+                    <a class="mail-client__labels__item" href='/message'>
+                        <span class="text">쪽지</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/statistics'>
+                        <span class="text">통계</span>
                     </a>
                     <a class="mail-client__labels__item" href='/logout'>
                         <span class="text">로그아웃</span>
@@ -33,16 +36,17 @@
             <section class="community-l">
                 <div class="community-board">
                     <h2 class="header">Community</h2>
-                    <p class="header-intro">상대에게 위로의 쪽지를 보내보세요.</p>
+                    <p class="header-intro" style="margin-bottom:20px;">상대에게 위로의 쪽지를 보내보세요.</p>
+                    <div class="community-container" style="height: 625px; overflow: auto;">
                     <ul class="display-posts-listing">
-                        <% for (var i = 0; i < posts.length; i++) { %>
+                        <% for (var i = (posts.length)-1; i >= 0; i--) { %>
                         <li class="listing-post">
                             <a class="title" href=<%= '/community/'+posts[i].postId %>><%= posts[i].title %></a>
-                            <span class="date"><%= posts[i].date %></span>
+                            <span class="date"><%= posts[i].date.slice(0, 10) %></span>
                         </li>
                         <% } %>
                     </ul>
-
+                    </div>
                 </div>
             </section>
         </div>

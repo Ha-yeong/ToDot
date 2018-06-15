@@ -22,8 +22,11 @@
                     <a class="mail-client__labels__item" href='/community'>
                         <span class="text">커뮤니티</span>
                     </a>
-                    <a class="mail-client__labels__item">
-                        <span class="text">분석</span>
+                    <a class="mail-client__labels__item" href='/message'>
+                        <span class="text">쪽지</span>
+                    </a>
+                    <a class="mail-client__labels__item" href='/statistics'>
+                        <span class="text">통계</span>
                     </a>
                     <a class="mail-client__labels__item" href='/logout'>
                         <span class="text">로그아웃</span>
@@ -72,6 +75,28 @@
             </label>
             <div class="content-container">
                 <div class="content-input"><textarea class="content-input-area" cols="100" rows="20" placeholder="Write your story" name="content"></textarea>
+                </div>
+            </div>
+
+            <div class="cover-container">
+                <h5>Select Cover </h5>
+                <div class="cover-list">
+                    <label>
+                        <input type="radio" name="cover" class="cover" value="0"/>
+                        <img src="/cover/0.jpg" style="width:60px; height:22px; margin-right: 4px;">
+                    </label>
+                    <label>
+                        <input type="radio" name="cover" class="cover" value="1"/>
+                        <img src="/cover/1.jpg" style="width:60px; height:22px; margin-right: 4px;">
+                    </label>
+                    <label>
+                        <input type="radio" name="cover" class="cover" value="2"/>
+                        <img src="/cover/2.jpg" style="width:60px; height:22px; margin-right: 4px;">
+                    </label>
+                    <label>
+                        <input type="radio" name="cover" class="cover" value="3"/>
+                        <img src="/cover/3.jpg" style="width:60px; height:22px; margin-right: 4px;">
+                    </label>
                 </div>
             </div>
             <button type="submit" class="post-button">Send</button>

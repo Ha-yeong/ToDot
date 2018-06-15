@@ -9,7 +9,6 @@ body {
     background-color: #636c94;
     font-family: "Montserrat", Arial, sans-serif;
 }
-
 button {
     font-family: "Montserrat", Arial, sans-serif;
     cursor: pointer;
@@ -30,6 +29,12 @@ li{
     display: none;
 }
 .fake_content{
+    display: none;
+}
+.fake_date{
+    display: none;
+}
+.fake_cover{
     display: none;
 }
 .text{
@@ -465,4 +470,108 @@ a.go-back-text{
     background-color: #02c386;
     border-radius: 20px;
     padding: 10px 20px;
+}
+
+
+
+/* 메세지 */
+.chattheme {
+	background-color: #9bbad8;
+    padding: 4px 4px 0px 4px;
+    width: relative;
+    height: 250px;
+}
+
+.chattheme .blank {
+	clear: both;
+	height: 10px;
+}
+
+.log {
+	height: 198px;
+	overflow-y: scroll;
+	font-size: 12px;
+}
+
+.log .time {
+	font-size: 10px;
+}
+
+.log .onemsg {
+	float: left;
+    width: 100%;
+}
+
+.log .onemsg .box {
+	float: left;
+	width: calc(100% - 48px);
+}
+
+.log .onemsg .name {
+    font-size: 15px;
+}
+
+.log .onemsg .balloon {
+	float: left;
+	position: relative;
+	width: 8px;
+	height: 22px;
+	background: url(../image/chat_balloon.png) no-repeat;
+	z-index: 1;
+}
+
+.log .onemsg .content {
+	float: left;
+	position: relative;
+	min-height: 24px;
+	max-width: calc(100% - 64px);
+	left: -2px;
+	background-color: #ffffff;
+	border-radius: 3px;
+	z-index: 2;
+	padding: 0px 4px 0px 4px;
+	word-break: break-all;
+	cursor: pointer;
+}
+
+.sendmsg .textarea {
+	float: left;
+	width: calc(100% - 68px);
+	height: 39px;
+	border-radius: 8px 0px 0px 8px;
+	margin: 0px 0px 0px 0px;
+	padding: 2px 2px 2px 2px;
+	resize: none;
+	outline: none;
+	border: 1px solid transparent;
+}
+
+.sendmsg .textarea:focus {
+	border-color: #4d90fe;
+}
+
+.sendmsg .button {
+	float: right;
+	width: 62px;
+	height: 45px;
+	background-color: #ffec42;
+	border-radius: 0px 8px 8px 0px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	text-align: center;
+	display: table;
+	cursor: pointer;
+}
+
+.sendmsg .button p {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.like {
+    width: 30px;
+	height: 30px;
+	background: url(../image/thumbs_up.png);
+	background-size: cover;
+	float: left;
 }

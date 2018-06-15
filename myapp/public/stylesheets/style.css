@@ -1,3 +1,5 @@
+/* 로그인 페이지 움직이는 라이언 */
+
 html{
     margin, padding: 0;
 }
@@ -8,9 +10,7 @@ body {
 }
 li{
     list-style-type: none;
-
 }
-
 form {
     width: 320px;
     padding: 60px 25px 80px;
@@ -30,7 +30,6 @@ form {
 
   color: white;
 }
-
 svg {
     width: 70%;
     border-radius: 50%;
@@ -39,7 +38,6 @@ svg {
     align-self: center;
     transform-style: preserve-3d;
 }
-
 input {
     font-size: 16px;
     border: 0;

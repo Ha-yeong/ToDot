@@ -15,9 +15,9 @@ module.exports = function(app)
     else share = 0;
     var date = moment().format();
     var emoji = req.body.emoji;
-
-    var sql = 'INSERT INTO posts (authorId, date, title, share, content, emoji) VALUES(?, ?, ?, ?, ?, ?)';
-    conn.query(sql, [authorId, date, title, share, content, emoji], function(err, results){
+    var coverId = req.body.cover;
+    var sql = 'INSERT INTO posts (authorId, date, title, share, content, emoji, coverId) VALUES(?, ?, ?, ?, ?, ?, ?)';
+    conn.query(sql, [authorId, date, title, share, content, emoji, coverId], function(err, results){
       if(err){
         console.log(err);
         res.status(500);
@@ -62,8 +62,10 @@ module.exports = function(app)
     if (req.body.share) share = 1;
     else share = 0;
     var postId = req.params.id;
-    var sql = 'UPDATE posts SET title=?, content=?, share=? WHERE postId=?';
-    conn.query(sql, [title, content, share, postId], function(err, result, fields) {
+    var emoji = req.body.emoji;
+    var coverId = req.body.cover;
+    var sql = 'UPDATE posts SET title=?, content=?, share=?, emoji=?, coverId=? WHERE postId=?';
+    conn.query(sql, [title, content, share, emoji, coverId, postId], function(err, result, fields) {
       if (err) {
         console.log(err);
         res.status(500).send('Internal Server Error');
